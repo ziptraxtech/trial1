@@ -15,7 +15,7 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className="fixed w-full top-0 z-50">
+    <nav className="fixed w-full top-12 z-50">
       {/* Top Info Bar */}
       <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white px-4 py-2 flex justify-between items-center text-xs md:text-sm font-medium">
         <div className="flex gap-4 md:gap-8">
