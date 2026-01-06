@@ -11,12 +11,12 @@ export default function Hero() {
           {/* Left Content */}
           <div className="animate-fade-in-up">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="gradient-text">Business Setup</span>
+              <span className="gradient-text">Nidhi Sharma & Company</span>
               <br />
-              <span className="text-gray-900">Advisory</span>
+              <span className="text-gray-900">Chartered Accountants</span>
             </h1>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Foreign nationals can incorporate companies in India and hold foreign equity up to 100%, depending on the sector and subject to Reserve Bank of India approval.
+              One of the leading firms of Chartered Accountants, Gurugram, India. Providing comprehensive professional services in Cross border advisory, Auditing, Tax compliance, and consultancy since 2012.
             </p>
             <div className="flex gap-4 flex-wrap">
               <button className="btn-primary shadow-lg hover:shadow-xl">
