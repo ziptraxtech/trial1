@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <text x="50" y="400" font-family="Arial, sans-serif" font-size="300" font-weight="bold" fill="#2B5F7F">CA</text>
+  <text x="50" y="650" font-family="Arial, sans-serif" font-size="120" fill="#2B5F7F" letter-spacing="20">INDIA</text>
+  <path d="M 500 250 L 700 350 L 500 450" stroke="#F39C12" stroke-width="40" fill="none" stroke-linecap="round"/>
+  <path d="M 650 300 L 850 400 L 650 500" stroke="#27AE60" stroke-width="40" fill="none" stroke-linecap="round"/>
+</svg>

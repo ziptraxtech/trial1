@@ -1,0 +1,24 @@
+import { useState } from 'react'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Services from './components/Services'
+import Mission from './components/Mission'
+import Goals from './components/Goals'
+import WhoAreWe from './components/WhoAreWe'
+import Footer from './components/Footer'
+
+function App() {
+  return (
+    <div className="min-h-screen bg-white">
+      <Navbar />
+      <Hero />
+      <WhoAreWe />
+      <Mission />
+      <Goals />
+      <Services />
+      <Footer />
+    </div>
+  )
+}
+
+export default App
