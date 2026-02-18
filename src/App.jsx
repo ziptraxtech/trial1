@@ -6,6 +6,7 @@ import Services from './components/Services'
 import Mission from './components/Mission'
 import Goals from './components/Goals'
 import WhoAreWe from './components/WhoAreWe'
+import FounderNote from './components/FounderNote'
 import Footer from './components/Footer'
 
 function App() {
@@ -16,8 +17,9 @@ function App() {
       <Hero />
       <WhoAreWe />
       <Mission />
-      <Goals />
       <Services />
+      <FounderNote />
+      <Goals />
       <Footer />
     </div>
   )

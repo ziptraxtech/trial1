@@ -8,16 +8,30 @@ export default function Mission() {
       </div>
 
       <div className="container-custom relative z-10">
-        <div className="max-w-4xl mx-auto animate-fade-in-up">
-          <div className="bg-white/10 backdrop-blur-md rounded-3xl p-12 md:p-16 border border-white/20 shadow-2xl hover-lift">
-            <div className="flex justify-center mb-8">
-              <div className="text-6xl animate-float">🎯</div>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-8">
-              How Are We Different
-            </h2>
-            <p className="text-gray-100 text-center text-lg leading-relaxed font-light">
-              The Firm's consistent undertaking is to make a chief centered proficient work on offering top notch types of assistance and incorporating esteem added information, for its clients and society all in all. Staying up with changing prerequisites of business and industry, the firm is very much outfitted to take tasks in broadened regions.
+        <div className="text-center mb-14 animate-fade-in-up">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Purpose</h2>
+          <p className="text-gray-300 text-lg">The foundation that guides everything we do</p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {/* Vision */}
+          <div className="bg-white/10 backdrop-blur-md rounded-3xl p-10 border border-white/20 shadow-2xl hover-lift animate-fade-in-up">
+            <div className="text-5xl mb-6 text-center">🔭</div>
+            <h3 className="text-2xl font-bold text-white text-center mb-5">Our Vision</h3>
+            <p className="text-gray-100 text-center leading-relaxed">
+              To empower businesses with accurate accounting and insightful reporting, enabling smarter decisions and sustainable growth.
+            </p>
+            <p className="text-gray-300 text-center text-sm mt-4 leading-relaxed">
+              We aim to be trusted partners by delivering expert outsourced solutions that bring clarity, efficiency, and confidence to every client.
+            </p>
+          </div>
+
+          {/* Mission */}
+          <div className="bg-white/10 backdrop-blur-md rounded-3xl p-10 border border-white/20 shadow-2xl hover-lift animate-fade-in-up">
+            <div className="text-5xl mb-6 text-center">🎯</div>
+            <h3 className="text-2xl font-bold text-white text-center mb-5">Our Mission</h3>
+            <p className="text-gray-100 text-center leading-relaxed">
+              To transform ideas into sustainable growth by delivering comprehensive professional services that clients trust, employees take pride in, and competitors respect.
             </p>
           </div>
         </div>

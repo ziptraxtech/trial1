@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react'
-import { X } from 'lucide-react'
+import { useState } from 'react'
+import { X, Bell } from 'lucide-react'
 
 export default function NotificationBar() {
-  const [isVisible, setIsVisible] = useState(true)
+  const [isExpanded, setIsExpanded] = useState(false)
 
   const updates = [
     "📢 GST Update: New compliance requirements for FY 2025-26 - File GSTR-1 by 11th of every month",
@@ -15,41 +15,46 @@ export default function NotificationBar() {
     "🌐 International Tax: Updated DTAA guidelines for cross-border transactions"
   ]
 
-  if (!isVisible) return null
-
   return (
-    <div className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-red-600 via-orange-600 to-red-600 text-white py-4 shadow-md overflow-hidden">
-      <div className="container-custom relative">
-        <div className="flex items-center gap-4">
-          <div className="flex-shrink-0 bg-white/20 px-4 py-1.5 rounded-full text-sm font-bold backdrop-blur-sm">
-            LATEST UPDATES
+    <div className="fixed bottom-8 right-6 z-[60] flex flex-col items-end gap-3">
+      {/* Expanded panel */}
+      {isExpanded && (
+        <div className="w-[92vw] max-w-[420px] rounded-2xl bg-gradient-to-br from-red-600 via-orange-600 to-red-700 text-white shadow-2xl overflow-hidden animate-fade-in-up">
+          {/* Header */}
+          <div className="flex items-center justify-between px-4 py-3 border-b border-white/20">
+            <span className="text-sm font-bold tracking-wide">LATEST UPDATES</span>
+            <button
+              onClick={() => setIsExpanded(false)}
+              className="hover:bg-white/20 p-1.5 rounded-full transition-colors"
+              aria-label="Close notifications"
+            >
+              <X size={15} />
+            </button>
           </div>
-          
-          <div className="flex-1 overflow-hidden relative">
-            <div className="animate-scroll whitespace-nowrap">
-              {updates.map((update, idx) => (
-                <span key={idx} className="inline-block mx-8 text-lg font-semibold">
-                  {update}
-                </span>
-              ))}
-              {/* Duplicate for seamless loop */}
-              {updates.map((update, idx) => (
-                <span key={`dup-${idx}`} className="inline-block mx-8 text-lg font-semibold">
-                  {update}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <button
-            onClick={() => setIsVisible(false)}
-            className="flex-shrink-0 hover:bg-white/20 p-1.5 rounded-full transition-colors"
-            aria-label="Close notification"
-          >
-            <X size={16} />
-          </button>
+          {/* Updates list */}
+          <ul className="divide-y divide-white/10 max-h-72 overflow-y-auto">
+            {updates.map((update, idx) => (
+              <li key={idx} className="px-4 py-3 text-sm font-medium hover:bg-white/10 transition-colors">
+                {update}
+              </li>
+            ))}
+          </ul>
         </div>
-      </div>
+      )}
+
+      {/* Floating trigger button */}
+      <button
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="relative flex items-center gap-2 bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 text-white px-5 py-3 rounded-full shadow-lg transition-all duration-300 font-semibold text-sm"
+        aria-label="Toggle notifications"
+      >
+        <Bell size={18} className={isExpanded ? 'animate-none' : 'animate-bounce'} />
+        <span>Updates</span>
+        {/* Notification dot */}
+        {!isExpanded && (
+          <span className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full border-2 border-white" />
+        )}
+      </button>
     </div>
   )
 }
