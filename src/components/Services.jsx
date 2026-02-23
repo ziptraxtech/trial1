@@ -66,31 +66,31 @@ const detailedServices = [
 function DetailedServiceCard({ service }) {
   const [open, setOpen] = useState(false)
   return (
-    <div className={`rounded-2xl overflow-hidden shadow-xl transition-all duration-300 ${open ? 'ring-2 ring-blue-400' : ''}`}>
+    <div className={`rounded-2xl overflow-hidden shadow-lg transition-all duration-500 card-hover-effect ${open ? 'ring-2 ring-primary-600 shadow-2xl' : ''}`}>
       <button
         onClick={() => setOpen(!open)}
-        className={`w-full bg-gradient-to-r ${service.color} text-navy-900 px-8 py-6 flex items-center justify-between gap-4 text-left`}
+        className={`w-full bg-gradient-to-r ${service.color} text-navy-900 px-8 py-6 flex items-center justify-between gap-4 text-left transition-all duration-300 hover:shadow-lg`}
         style={{backgroundImage: `linear-gradient(to right, var(--tw-gradient-stops))`}}
       >
         <div className="flex items-center gap-4">
-          <span className="text-4xl">{service.icon}</span>
+          <span className="text-4xl transition-transform duration-300 group-hover:scale-110">{service.icon}</span>
           <div>
             <p className="text-xl font-bold text-navy-900">{service.title}</p>
             <p className="text-sm text-neutral-brown mt-1">{service.tagline}</p>
           </div>
         </div>
-        <span className={`text-2xl transition-transform duration-300 ${open ? 'rotate-180' : ''}`}>⌄</span>
+        <span className={`text-2xl transition-all duration-500 transform ${open ? 'rotate-180' : ''}`}>⌄</span>
       </button>
       {open && (
-        <div className="bg-primary-100 px-8 py-7 animate-fade-in-up">
+        <div className="bg-primary-100 px-8 py-7 animate-fadeInUp">
           <p className="text-navy-900 mb-6 leading-relaxed">{service.intro}</p>
           <h4 className="font-bold text-navy-900 mb-4 text-lg">Our Offerings</h4>
           <ul className="space-y-4">
             {service.offerings.map((o, i) => (
-              <li key={i} className="flex gap-3">
-                <span className="mt-1 w-2 h-2 rounded-full bg-navy-900 flex-shrink-0"></span>
+              <li key={i} className="flex gap-3 animate-stagger-1" style={{animationDelay: `${i * 0.05}s`, animationFillMode: 'both'}}>
+                <span className="mt-1 w-2 h-2 rounded-full bg-navy-900 flex-shrink-0 transition-transform duration-300"></span>
                 <div>
-                  <span className="font-semibold text-navy-900">{o.name}</span>
+                  <span className="font-semibold text-navy-900 hover:text-primary-600 transition-colors duration-300">{o.name}</span>
                   {o.desc && <span className="text-neutral-gray"> — {o.desc}</span>}
                 </div>
               </li>
@@ -125,13 +125,17 @@ export default function Services() {
           {overviewServices.map((service, idx) => (
             <div
               key={idx}
-              className={`bg-gradient-to-br ${service.color} rounded-2xl p-8 text-navy-900 hover-lift shadow-lg hover:shadow-2xl group overflow-hidden relative`}
+              className={`bg-gradient-to-br ${service.color} rounded-2xl p-8 text-navy-900 hover-lift shadow-lg hover:shadow-2xl group overflow-hidden relative card-hover-effect animate-stagger-${Math.min(idx % 4, 3) + 1}`}
+              style={{
+                animationFillMode: 'both',
+                animationDelay: `${idx * 0.1}s`
+              }}
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-300"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
               <div className="relative z-10">
-                <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">{service.icon}</div>
-                <h3 className="text-lg font-bold mb-3 text-navy-900">{service.title}</h3>
-                <p className="text-sm text-neutral-gray leading-relaxed">{service.description}</p>
+                <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300 inline-block">{service.icon}</div>
+                <h3 className="text-lg font-bold mb-3 text-navy-900 text-left">{service.title}</h3>
+                <p className="text-sm text-neutral-gray leading-relaxed text-left">{service.description}</p>
               </div>
             </div>
           ))}

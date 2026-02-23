@@ -34,18 +34,22 @@ export default function Goals() {
           {principles.map((principle, idx) => (
             <div
               key={idx}
-              className={`bg-gradient-to-br ${principle.color} rounded-2xl p-8 text-navy-900 transform hover:scale-105 hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-2xl cursor-pointer group`}
+              className={`bg-gradient-to-br ${principle.color} rounded-2xl p-8 text-navy-900 transform hover:scale-105 hover:-translate-y-2 transition-all duration-500 shadow-lg hover:shadow-2xl cursor-pointer group card-hover-effect animate-stagger-${Math.min(idx % 4, 3) + 1}`}
+              style={{
+                animationFillMode: 'both',
+                animationDelay: `${idx * 0.08}s`
+              }}
             >
-              <div className="text-5xl mb-4 group-hover:animate-bounce text-center">{principle.icon}</div>
-              <div className="text-xl font-bold mb-3 opacity-90 text-center text-navy-900">PRINCIPLE {principle.number}</div>
-              <div className="text-sm font-bold leading-tight text-center text-navy-900">{principle.title}</div>
+              <div className="text-5xl mb-4 group-hover:scale-125 transition-transform duration-300 text-center inline-block w-full">{principle.icon}</div>
+              <div className="text-xl font-bold mb-3 opacity-90 text-center text-navy-900">{principle.number}</div>
+              <div className="text-sm font-bold leading-tight text-center text-navy-900 hover:text-navy-700 transition-colors duration-300">{principle.title}</div>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 max-w-4xl mx-auto bg-primary-100 rounded-2xl p-8 md:p-12">
-          <h3 className="text-2xl font-bold text-navy-900 mb-6 text-center">Our Commitment to Sustainability</h3>
-          <p className="text-navy-900 text-center leading-relaxed">
+        <div className="mt-16 max-w-4xl mx-auto bg-primary-100 rounded-2xl p-8 md:p-12 card-hover-effect shadow-lg hover:shadow-2xl transition-all duration-500 animate-fade-in-up">
+          <h3 className="text-2xl font-bold text-navy-900 mb-6 text-center hover:text-primary-600 transition-colors duration-300">Our Commitment to Sustainability</h3>
+          <p className="text-navy-900 text-center leading-relaxed transition-colors duration-300">
             At Nidhi Sharma & Company, we are certified in Business Responsibility and Sustainability Reporting (BRSR) and help organizations achieve their ESG goals through comprehensive advisory and compliance services.
           </p>
         </div>

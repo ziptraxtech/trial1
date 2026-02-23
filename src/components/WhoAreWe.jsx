@@ -28,42 +28,42 @@ export default function WhoAreWe() {
 
           {/* Approach & Values */}
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="animate-slide-in-left bg-gradient-to-br from-navy-800 to-navy-900 rounded-3xl p-8 md:p-10 shadow-2xl hover-lift">
-              <h3 className="text-3xl font-bold text-navy-900 mb-6">Our Approach</h3>
-              <div className="space-y-5 text-navy-900">
-                <div>
-                  <p className="font-semibold text-navy-900 mb-1">• Client-Centric Strategies</p>
-                  <p className="text-sm text-neutral-brown">Tailored to align with your unique business goals.</p>
+            <div className="animate-slide-in-left bg-gradient-to-br from-navy-800 to-navy-900 rounded-3xl p-8 md:p-10 shadow-2xl hover-lift hover:shadow-2xl transition-all duration-500 card-hover-effect">
+              <h3 className="text-3xl font-bold text-primary-100 mb-6 hover:text-primary-200 transition-colors duration-300">Our Approach</h3>
+              <div className="space-y-5 text-primary-50">
+                <div className="hover:translate-x-2 transition-transform duration-300">
+                  <p className="font-semibold text-primary-100 mb-1">• Client-Centric Strategies</p>
+                  <p className="text-sm text-primary-200">Tailored to align with your unique business goals.</p>
                 </div>
-                <div>
-                  <p className="font-semibold text-navy-900 mb-1">• Knowledge Integration</p>
-                  <p className="text-sm text-neutral-brown">Combining legal, financial, and corporate expertise for holistic outcomes.</p>
+                <div className="hover:translate-x-2 transition-transform duration-300">
+                  <p className="font-semibold text-primary-100 mb-1">• Knowledge Integration</p>
+                  <p className="text-sm text-primary-200">Combining legal, financial, and corporate expertise for holistic outcomes.</p>
                 </div>
-                <div>
-                  <p className="font-semibold text-navy-900 mb-1">• Future-Ready Advisory</p>
-                  <p className="text-sm text-neutral-brown">Staying ahead of regulatory and industry changes to safeguard your growth.</p>
+                <div className="hover:translate-x-2 transition-transform duration-300">
+                  <p className="font-semibold text-primary-100 mb-1">• Future-Ready Advisory</p>
+                  <p className="text-sm text-primary-200">Staying ahead of regulatory and industry changes to safeguard your growth.</p>
                 </div>
               </div>
             </div>
 
-            <div className="animate-slide-in-right bg-gradient-to-br from-primary-500 to-primary-700 rounded-3xl p-8 md:p-10 shadow-2xl hover-lift">
-              <h3 className="text-3xl font-bold text-navy-900 mb-6">Our Values</h3>
+            <div className="animate-slide-in-right bg-gradient-to-br from-primary-500 to-primary-700 rounded-3xl p-8 md:p-10 shadow-2xl hover-lift hover:shadow-2xl transition-all duration-500 card-hover-effect">
+              <h3 className="text-3xl font-bold text-navy-900 mb-6 hover:text-navy-800 transition-colors duration-300">Our Values</h3>
               <div className="space-y-5 text-navy-900">
-                <div>
+                <div className="hover:translate-x-2 transition-transform duration-300">
                   <p className="font-semibold text-navy-900 mb-1">• Honesty & Integrity</p>
-                  <p className="text-sm text-neutral-brown">Upholding the highest ethical standards in every engagement.</p>
+                  <p className="text-sm text-navy-800">Upholding the highest ethical standards in every engagement.</p>
                 </div>
-                <div>
+                <div className="hover:translate-x-2 transition-transform duration-300">
                   <p className="font-semibold text-navy-900 mb-1">• Commitment & Dedication</p>
-                  <p className="text-sm text-neutral-brown">Delivering excellence without compromise in every assignment.</p>
+                  <p className="text-sm text-navy-800">Delivering excellence without compromise in every assignment.</p>
                 </div>
-                <div>
+                <div className="hover:translate-x-2 transition-transform duration-300">
                   <p className="font-semibold text-navy-900 mb-1">• Professional Aptitude</p>
-                  <p className="text-sm text-neutral-brown">Ensuring sustainable, efficient, and reliable solutions.</p>
+                  <p className="text-sm text-navy-800">Ensuring sustainable, efficient, and reliable solutions.</p>
                 </div>
-                <div>
+                <div className="hover:translate-x-2 transition-transform duration-300">
                   <p className="font-semibold text-navy-900 mb-1">• Value Creation</p>
-                  <p className="text-sm text-neutral-brown">Adding measurable impact for clients and society.</p>
+                  <p className="text-sm text-navy-800">Adding measurable impact for clients and society.</p>
                 </div>
               </div>
             </div>
@@ -104,56 +104,56 @@ export default function WhoAreWe() {
 
           {/* Office Facilities Gallery */}
           <div className="animate-fade-in-up">
-            <h3 className="text-3xl font-bold text-navy-900 mb-2 text-center">Our Facilities</h3>
-            <p className="text-center text-neutral-brown font-medium mb-12">State-of-the-art infrastructure designed for excellence</p>
+            <h3 className="text-3xl font-bold text-navy-900 mb-2 text-center hover:text-primary-600 transition-colors duration-300">Our Facilities</h3>
+            <p className="text-center text-neutral-brown font-medium mb-12 transition-colors duration-300">State-of-the-art infrastructure designed for excellence</p>
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-              <div className="group relative overflow-hidden rounded-2xl shadow-xl hover-lift">
+              <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl card-hover-effect transition-all duration-500 transform hover:scale-105 animate-stagger-1" style={{animationFillMode: 'both'}}>
                 <img 
-                  src="/Photo/Conference.jpg" 
+                  src="/Conference.jpg" 
                   alt="Conference Room 1" 
-                  className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <p className="text-white font-semibold">Conference Room 1</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <p className="text-white font-semibold text-lg">Conference Room 1</p>
                 </div>
               </div>
 
-              <div className="group relative overflow-hidden rounded-2xl shadow-xl hover-lift">
+              <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl card-hover-effect transition-all duration-500 transform hover:scale-105 animate-stagger-2" style={{animationFillMode: 'both'}}>
                 <img 
-                  src="/Photo/Conference2.jpg" 
+                  src="/Conference2.jpg" 
                   alt="Conference Room 2" 
-                  className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <p className="text-white font-semibold">Conference Room 2</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <p className="text-white font-semibold text-lg">Conference Room 2</p>
                 </div>
               </div>
 
-              <div className="group relative overflow-hidden rounded-2xl shadow-xl hover-lift">
+              <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl card-hover-effect transition-all duration-500 transform hover:scale-105 animate-stagger-3" style={{animationFillMode: 'both'}}>
                 <img 
-                  src="/Photo/hall.jpg" 
+                  src="/hall.jpg" 
                   alt="Meeting Hall" 
-                  className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <p className="text-white font-semibold">Meeting Hall</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <p className="text-white font-semibold text-lg">Meeting Hall</p>
                 </div>
               </div>
 
-              <div className="group relative overflow-hidden rounded-2xl shadow-xl hover-lift">
+              <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl card-hover-effect transition-all duration-500 transform hover:scale-105 animate-stagger-4" style={{animationFillMode: 'both'}}>
                 <img 
-                  src="/Photo/Meeting room.jpg" 
+                  src="/Meeting%20room.jpg" 
                   alt="Meeting Room" 
-                  className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <p className="text-white font-semibold">Meeting Room</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <p className="text-white font-semibold text-lg">Meeting Room</p>
                 </div>
               </div>
             </div>
 
-            <div className="mt-12 bg-gradient-to-r from-primary-100 to-primary-200 rounded-2xl p-8 text-center">
-              <p className="text-navy-900 text-lg">
+            <div className="mt-12 bg-gradient-to-r from-primary-100 to-primary-200 rounded-2xl p-8 text-center shadow-lg hover:shadow-xl card-hover-effect transition-all duration-500">
+              <p className="text-navy-900 text-lg hover:text-navy-800 transition-colors duration-300">
                 Our Delhi and Gurugram offices are equipped with modern facilities to provide our clients with a professional and collaborative environment for consultations and strategic discussions.
               </p>
             </div>
