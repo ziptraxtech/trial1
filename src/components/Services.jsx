@@ -66,86 +66,89 @@ const detailedServices = [
 function DetailedServiceCard({ service }) {
   const [open, setOpen] = useState(false)
   return (
-    <div className={`rounded-2xl overflow-hidden shadow-lg transition-all duration-500 card-hover-effect ${open ? 'ring-2 ring-primary-600 shadow-2xl' : ''}`}>
+    <div className={`rounded-2xl overflow-hidden transition-all duration-500 border ${open ? 'border-navy-900/20 shadow-2xl' : 'border-primary-200/60 shadow-lg hover:shadow-xl'}`}>
       <button
         onClick={() => setOpen(!open)}
-        className={`w-full bg-gradient-to-r ${service.color} text-navy-900 px-8 py-6 flex items-center justify-between gap-4 text-left transition-all duration-300 hover:shadow-lg`}
-        style={{backgroundImage: `linear-gradient(to right, var(--tw-gradient-stops))`}}
+        className="w-full bg-gradient-to-r from-navy-900 to-navy-800 px-8 py-5 flex items-center justify-between gap-4 text-left transition-all duration-300 group"
       >
         <div className="flex items-center gap-4">
-          <span className="text-4xl transition-transform duration-300 group-hover:scale-110">{service.icon}</span>
+          <span className="text-3xl group-hover:scale-110 transition-transform duration-300">{service.icon}</span>
           <div>
-            <p className="text-xl font-bold text-navy-900">{service.title}</p>
-            <p className="text-sm text-neutral-brown mt-1">{service.tagline}</p>
+            <p className="text-lg font-bold text-primary-100">{service.title}</p>
+            <p className="text-xs text-primary-200/60 mt-0.5">{service.tagline}</p>
           </div>
         </div>
-        <span className={`text-2xl transition-all duration-500 transform ${open ? 'rotate-180' : ''}`}>⌄</span>
+        <span className={`text-primary-200/60 text-xl transition-all duration-500 transform ${open ? 'rotate-180' : ''}`}>▾</span>
       </button>
-      {open && (
-        <div className="bg-primary-100 px-8 py-7 animate-fadeInUp">
-          <p className="text-navy-900 mb-6 leading-relaxed">{service.intro}</p>
-          <h4 className="font-bold text-navy-900 mb-4 text-lg">Our Offerings</h4>
-          <ul className="space-y-4">
+      <div className={`overflow-hidden transition-all duration-500 ${open ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}`}>
+        <div className="bg-white/60 backdrop-blur-sm px-8 py-7">
+          <p className="text-navy-900/80 mb-6 leading-relaxed">{service.intro}</p>
+          <p className="font-bold text-navy-900 mb-4 text-sm uppercase tracking-wider">Our Offerings</p>
+          <ul className="space-y-3">
             {service.offerings.map((o, i) => (
-              <li key={i} className="flex gap-3 animate-stagger-1" style={{animationDelay: `${i * 0.05}s`, animationFillMode: 'both'}}>
-                <span className="mt-1 w-2 h-2 rounded-full bg-navy-900 flex-shrink-0 transition-transform duration-300"></span>
+              <li key={i} className="flex gap-3 group/item">
+                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-navy-900 flex-shrink-0 group-hover/item:scale-150 transition-transform"></span>
                 <div>
-                  <span className="font-semibold text-navy-900 hover:text-primary-600 transition-colors duration-300">{o.name}</span>
-                  {o.desc && <span className="text-neutral-gray"> — {o.desc}</span>}
+                  <span className="font-semibold text-navy-900">{o.name}</span>
+                  {o.desc && <span className="text-navy-900/60"> — {o.desc}</span>}
                 </div>
               </li>
             ))}
           </ul>
         </div>
-      )}
+      </div>
     </div>
   )
 }
 
 export default function Services() {
   return (
-    <section id="services" className="section-padding bg-gradient-to-b from-primary-100 to-primary-200 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-5 -z-10">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-navy-900 rounded-full mix-blend-multiply filter blur-3xl"></div>
-      </div>
+    <section id="services" className="section-padding relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary-100 to-primary-200"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-navy-900/[0.02] rounded-full blur-3xl"></div>
 
       <div className="container-custom relative z-10">
-        {/* Heading */}
+        {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in-up">
+          <div className="section-label mx-auto mb-4">
+            <span className="w-2 h-2 bg-navy-900 rounded-full"></span>
+            What We Do
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="gradient-text">Our Services</span>
           </h2>
-          <p className="text-navy-900 text-lg max-w-3xl mx-auto">
+          <p className="text-navy-900/70 text-lg max-w-3xl mx-auto">
             A comprehensive suite of professional services designed to meet the evolving needs of businesses in India and abroad.
           </p>
+          <div className="line-decoration mt-6"></div>
         </div>
 
         {/* Overview grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-20">
           {overviewServices.map((service, idx) => (
             <div
               key={idx}
-              className={`bg-gradient-to-br ${service.color} rounded-2xl p-8 text-navy-900 hover-lift shadow-lg hover:shadow-2xl group overflow-hidden relative card-hover-effect animate-stagger-${Math.min(idx % 4, 3) + 1}`}
-              style={{
-                animationFillMode: 'both',
-                animationDelay: `${idx * 0.1}s`
-              }}
+              className="card-elegant bg-gradient-to-br from-white/80 to-primary-100/60 p-7 group border border-primary-200/50"
+              style={{ animationDelay: `${idx * 0.08}s` }}
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
               <div className="relative z-10">
-                <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300 inline-block">{service.icon}</div>
-                <h3 className="text-lg font-bold mb-3 text-navy-900 text-left">{service.title}</h3>
-                <p className="text-sm text-neutral-gray leading-relaxed text-left">{service.description}</p>
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-navy-900 to-navy-800 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 group-hover:rotate-3 transition-all duration-400 shadow-lg">
+                  {service.icon}
+                </div>
+                <h3 className="text-base font-bold mb-2 text-navy-900">{service.title}</h3>
+                <p className="text-sm text-navy-900/60 leading-relaxed">{service.description}</p>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Detailed expandable service sections */}
-        <div className="text-center mb-10 animate-fade-in-up">
-          <h3 className="text-3xl font-bold text-navy-900 mb-2">Service Deep Dive</h3>
-          <p className="text-neutral-gray">Click any service below to explore our detailed offerings</p>
+        {/* Divider */}
+        <div className="divider-elegant mb-12">
+          <span className="text-navy-900/40 text-sm font-semibold tracking-widest uppercase">Deep Dive</span>
         </div>
+
+        {/* Detailed expandable sections */}
         <div className="space-y-4 max-w-4xl mx-auto">
           {detailedServices.map((service) => (
             <DetailedServiceCard key={service.id} service={service} />

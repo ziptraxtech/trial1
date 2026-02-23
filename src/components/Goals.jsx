@@ -1,57 +1,62 @@
 export default function Goals() {
   const principles = [
-    { number: '1', title: 'ETHICS, TRANSPARENCY & ACCOUNTABILITY', color: 'from-navy-800 to-navy-900', icon: '⚖️' },
-    { number: '2', title: 'SAFE & SUSTAINABLE GOODS', color: 'from-primary-600 to-primary-700', icon: '🌱' },
-    { number: '3', title: 'EMPLOYEE WELL-BEING', color: 'from-navy-700 to-navy-800', icon: '👥' },
-    { number: '4', title: 'STAKEHOLDER INTERESTS', color: 'from-primary-700 to-primary-800', icon: '🤝' },
-    { number: '5', title: 'HUMAN RIGHTS', color: 'from-navy-800 to-navy-900', icon: '✊' },
-    { number: '6', title: 'ENVIRONMENT PROTECTION', color: 'from-primary-600 to-primary-700', icon: '🌍' },
-    { number: '7', title: 'PUBLIC POLICY', color: 'from-navy-900 to-navy-800', icon: '📜' },
-    { number: '8', title: 'INCLUSIVE GROWTH', color: 'from-primary-500 to-primary-600', icon: '📈' },
-    { number: '9', title: 'CONSUMER VALUE', color: 'from-navy-700 to-navy-800', icon: '💎' },
+    { number: '1', title: 'ETHICS, TRANSPARENCY & ACCOUNTABILITY', icon: '⚖️' },
+    { number: '2', title: 'SAFE & SUSTAINABLE GOODS', icon: '🌱' },
+    { number: '3', title: 'EMPLOYEE WELL-BEING', icon: '👥' },
+    { number: '4', title: 'STAKEHOLDER INTERESTS', icon: '🤝' },
+    { number: '5', title: 'HUMAN RIGHTS', icon: '✊' },
+    { number: '6', title: 'ENVIRONMENT PROTECTION', icon: '🌍' },
+    { number: '7', title: 'PUBLIC POLICY', icon: '📜' },
+    { number: '8', title: 'INCLUSIVE GROWTH', icon: '📈' },
+    { number: '9', title: 'CONSUMER VALUE', icon: '💎' },
   ]
 
   return (
-    <section className="section-padding bg-gradient-to-b from-primary-100 to-primary-200 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-0 w-96 h-96 bg-navy-900 rounded-full mix-blend-multiply filter blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-navy-900 rounded-full mix-blend-multiply filter blur-3xl"></div>
-      </div>
+    <section className="section-padding relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-primary-100 to-primary-200"></div>
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-navy-900/[0.02] rounded-full blur-3xl"></div>
 
       <div className="container-custom relative z-10">
+        {/* Header */}
         <div className="text-center mb-16 animate-fade-in-up">
+          <div className="section-label mx-auto mb-4">
+            <span className="w-2 h-2 bg-navy-900 rounded-full"></span>
+            ESG Compliance
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="gradient-text">Business Responsibility & Sustainability Reporting</span>
+            <span className="gradient-text">BRSR Reporting</span>
           </h2>
-          <p className="text-navy-900 text-lg mb-8">Nine NGRBC Principles for ESG Compliance</p>
-          <p className="text-navy-900 max-w-4xl mx-auto">
-            The Indian Government laid down the economic, environmental and social responsibilities of business, and expected practices of good governance. These nine principles are categorized into ESG components of Environment, Society and Governance.
+          <p className="text-navy-900/70 text-lg mb-4">Nine NGRBC Principles for ESG Compliance</p>
+          <div className="line-decoration mb-6"></div>
+          <p className="text-navy-900/60 max-w-3xl mx-auto">
+            The Indian Government laid down the economic, environmental and social responsibilities of business. These nine principles are categorized into ESG components of Environment, Society and Governance.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Principles Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {principles.map((principle, idx) => (
             <div
               key={idx}
-              className={`bg-gradient-to-br ${principle.color} rounded-2xl p-8 text-navy-900 transform hover:scale-105 hover:-translate-y-2 transition-all duration-500 shadow-lg hover:shadow-2xl cursor-pointer group card-hover-effect animate-stagger-${Math.min(idx % 4, 3) + 1}`}
-              style={{
-                animationFillMode: 'both',
-                animationDelay: `${idx * 0.08}s`
-              }}
+              className={`card-elegant group cursor-default p-7 ${idx % 2 === 0 ? 'bg-gradient-to-br from-navy-900 to-navy-800 border-0' : 'bg-white/60 backdrop-blur-sm border border-primary-200/40'}`}
             >
-              <div className="text-5xl mb-4 group-hover:scale-125 transition-transform duration-300 text-center inline-block w-full">{principle.icon}</div>
-              <div className="text-xl font-bold mb-3 opacity-90 text-center text-navy-900">{principle.number}</div>
-              <div className="text-sm font-bold leading-tight text-center text-navy-900 hover:text-navy-700 transition-colors duration-300">{principle.title}</div>
+              <div className="relative z-10 text-center">
+                <div className="text-3xl mb-3 group-hover:scale-125 transition-transform duration-300 inline-block">{principle.icon}</div>
+                <div className={`text-sm font-bold mb-2 ${idx % 2 === 0 ? 'text-primary-400/60' : 'text-navy-900/30'}`}>Principle {principle.number}</div>
+                <div className={`text-sm font-bold leading-tight ${idx % 2 === 0 ? 'text-primary-100' : 'text-navy-900'}`}>{principle.title}</div>
+              </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 max-w-4xl mx-auto bg-primary-100 rounded-2xl p-8 md:p-12 card-hover-effect shadow-lg hover:shadow-2xl transition-all duration-500 animate-fade-in-up">
-          <h3 className="text-2xl font-bold text-navy-900 mb-6 text-center hover:text-primary-600 transition-colors duration-300">Our Commitment to Sustainability</h3>
-          <p className="text-navy-900 text-center leading-relaxed transition-colors duration-300">
-            At Nidhi Sharma & Company, we are certified in Business Responsibility and Sustainability Reporting (BRSR) and help organizations achieve their ESG goals through comprehensive advisory and compliance services.
-          </p>
+        {/* Commitment box */}
+        <div className="mt-14 max-w-4xl mx-auto card-elegant bg-white/50 backdrop-blur-sm p-8 md:p-10 border border-primary-200/40 animate-fade-in-up">
+          <div className="relative z-10 text-center">
+            <h3 className="text-xl font-bold text-navy-900 mb-4">Our Commitment to Sustainability</h3>
+            <p className="text-navy-900/60 leading-relaxed">
+              At Nidhi Sharma & Company, we are certified in Business Responsibility and Sustainability Reporting (BRSR) and help organizations achieve their ESG goals through comprehensive advisory and compliance services.
+            </p>
+          </div>
         </div>
       </div>
     </section>
