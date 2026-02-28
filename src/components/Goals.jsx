@@ -14,7 +14,8 @@ export default function Goals() {
   return (
     <section className="section-padding relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-primary-100 to-primary-200"></div>
-      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-navy-900/[0.02] rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-violet-500/[0.04] rounded-full blur-3xl"></div>
+      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-blue-500/[0.04] rounded-full blur-3xl"></div>
 
       <div className="container-custom relative z-10">
         {/* Header */}

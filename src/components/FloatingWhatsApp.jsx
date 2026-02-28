@@ -15,7 +15,7 @@ export default function FloatingWhatsApp() {
         alt="WhatsApp"
         className="w-14 h-14 object-contain rounded-2xl"
       />
-      <span className="absolute -top-12 right-0 bg-gray-800 text-white text-sm px-3 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+      <span className="absolute -top-12 right-0 bg-navy-800 border border-purple-500/20 text-white text-sm px-3 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-lg shadow-purple-900/20">
         WhatsApp us!
       </span>
     </a>

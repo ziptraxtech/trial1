@@ -19,7 +19,7 @@ export default function NotificationBar() {
     <div className="fixed bottom-8 right-6 z-[60] flex flex-col items-end gap-3">
       {/* Expanded panel */}
       {isExpanded && (
-        <div className="w-[92vw] max-w-[420px] rounded-2xl bg-gradient-to-br from-red-600 via-orange-600 to-red-700 text-white shadow-2xl overflow-hidden animate-fade-in-up">
+        <div className="w-[92vw] max-w-[420px] rounded-2xl bg-gradient-to-br from-blue-700 via-violet-700 to-purple-700 text-white shadow-2xl shadow-purple-900/40 overflow-hidden animate-fade-in-up border border-purple-400/20">
           {/* Header */}
           <div className="flex items-center justify-between px-4 py-3 border-b border-white/20">
             <span className="text-sm font-bold tracking-wide">LATEST UPDATES</span>
@@ -45,14 +45,14 @@ export default function NotificationBar() {
       {/* Floating trigger button */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="relative flex items-center gap-2 bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 text-white px-5 py-3 rounded-full shadow-lg transition-all duration-300 font-semibold text-sm"
+        className="relative flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-5 py-3 rounded-full shadow-lg shadow-purple-900/40 transition-all duration-300 font-semibold text-sm border border-purple-400/20"
         aria-label="Toggle notifications"
       >
         <Bell size={18} className={isExpanded ? 'animate-none' : 'animate-bounce'} />
         <span>Updates</span>
         {/* Notification dot */}
         {!isExpanded && (
-          <span className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full border-2 border-white" />
+          <span className="absolute -top-1 -right-1 w-3 h-3 bg-purple-300 rounded-full border-2 border-navy-900 animate-neon-pulse" />
         )}
       </button>
     </div>

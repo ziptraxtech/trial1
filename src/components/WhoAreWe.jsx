@@ -2,7 +2,8 @@ export default function WhoAreWe() {
   return (
     <section id="about" className="section-padding relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-primary-100 to-primary-200"></div>
-      <div className="absolute top-40 right-0 w-[500px] h-[500px] bg-navy-900/[0.02] rounded-full blur-3xl"></div>
+      <div className="absolute top-40 right-0 w-[500px] h-[500px] bg-blue-500/[0.05] rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-violet-500/[0.04] rounded-full blur-3xl"></div>
 
       <div className="container-custom relative z-10">
         {/* Section Header */}
@@ -39,13 +40,13 @@ export default function WhoAreWe() {
 
           {/* Approach & Values */}
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="animate-slide-in-left card-elegant bg-gradient-to-br from-navy-900 to-navy-800 p-8 md:p-10 border-0">
+            <div className="animate-slide-in-left card-elegant bg-gradient-to-br from-navy-800 via-navy-700 to-navy-800 p-8 md:p-10 border border-blue-400/30">
               <div className="relative z-10">
                 <div className="section-label-light mb-5">
-                  <span className="w-2 h-2 bg-primary-400 rounded-full"></span>
+                  <span className="w-2 h-2 bg-primary-50 rounded-full"></span>
                   How We Work
                 </div>
-                <h3 className="text-2xl font-bold text-primary-200 mb-6">Our Approach</h3>
+                <h3 className="text-2xl font-bold text-primary-50 mb-6">Our Approach</h3>
                 <div className="space-y-5">
                   {[
                     { title: 'Client-Centric Strategies', desc: 'Tailored to align with your unique business goals.' },
@@ -55,8 +56,8 @@ export default function WhoAreWe() {
                     <div key={i} className="group flex gap-3 hover:translate-x-1 transition-transform duration-300">
                       <span className="w-1.5 h-1.5 mt-2 bg-primary-400 rounded-full flex-shrink-0 group-hover:scale-150 transition-transform"></span>
                       <div>
-                        <p className="font-semibold text-primary-100 text-sm">{item.title}</p>
-                        <p className="text-primary-200/60 text-sm mt-0.5">{item.desc}</p>
+                        <p className="font-semibold text-primary-50 text-sm">{item.title}</p>
+                        <p className="text-primary-100/80 text-sm mt-0.5">{item.desc}</p>
                       </div>
                     </div>
                   ))}

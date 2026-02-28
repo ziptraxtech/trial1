@@ -2,7 +2,8 @@ export default function FounderNote() {
   return (
     <section id="founder" className="section-padding relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-primary-200 to-primary-100"></div>
-      <div className="absolute top-20 right-0 w-[400px] h-[400px] bg-navy-900/[0.02] rounded-full blur-3xl"></div>
+      <div className="absolute top-20 right-0 w-[400px] h-[400px] bg-violet-500/[0.05] rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-blue-500/[0.04] rounded-full blur-3xl"></div>
 
       <div className="container-custom relative z-10 max-w-4xl mx-auto">
         {/* Header */}
@@ -19,7 +20,7 @@ export default function FounderNote() {
 
         <div className="animate-fade-in-up card-elegant bg-white/50 backdrop-blur-sm overflow-hidden border border-primary-200/40">
           {/* Navy accent bar */}
-          <div className="bg-gradient-to-r from-navy-900 to-navy-800 px-8 py-4 flex items-center gap-3">
+          <div className="bg-gradient-to-r from-blue-700 via-violet-700 to-purple-700 px-8 py-4 flex items-center gap-3">
             <span className="text-primary-200/40 text-4xl leading-none font-serif-display">❝</span>
             <p className="text-primary-200/60 text-xs font-semibold uppercase tracking-widest">Message from Nidhi Sharma, FCA</p>
           </div>
@@ -38,7 +39,7 @@ export default function FounderNote() {
 
           {/* Signature */}
           <div className="relative z-10 px-8 md:px-14 pb-10 flex items-center gap-4 border-t border-primary-200/30 pt-6">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-navy-900 to-navy-800 flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
+            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center text-white text-sm font-bold flex-shrink-0 shadow-lg shadow-purple-900/30">
               NS
             </div>
             <div>

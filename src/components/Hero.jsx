@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Hero() {
   const [count1, setCount1] = useState(0)
@@ -29,10 +30,11 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900"></div>
       <div className="noise-overlay absolute inset-0"></div>
       
-      {/* Floating decorative circles */}
-      <div className="absolute top-20 right-[10%] w-72 h-72 bg-primary-500/10 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute bottom-10 left-[5%] w-96 h-96 bg-primary-600/8 rounded-full blur-3xl animate-float" style={{animationDelay: '1.5s'}}></div>
-      <div className="absolute top-1/2 right-[30%] w-48 h-48 bg-primary-400/5 rounded-full blur-2xl animate-float" style={{animationDelay: '3s'}}></div>
+      {/* Floating decorative circles - blue and neon purple */}
+      <div className="absolute top-20 right-[10%] w-72 h-72 bg-purple-600/15 rounded-full blur-3xl animate-float"></div>
+      <div className="absolute bottom-10 left-[5%] w-96 h-96 bg-blue-600/12 rounded-full blur-3xl animate-float" style={{animationDelay: '1.5s'}}></div>
+      <div className="absolute top-1/2 right-[30%] w-48 h-48 bg-violet-500/8 rounded-full blur-2xl animate-float" style={{animationDelay: '3s'}}></div>
+      <div className="absolute top-1/3 left-[20%] w-64 h-64 bg-blue-500/8 rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
 
       {/* Subtle dot pattern */}
       <div className="absolute inset-0 opacity-[0.03]" style={{backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px'}}></div>
@@ -49,10 +51,10 @@ export default function Hero() {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2 leading-tight">
-              <span className="text-primary-300">Nidhi Sharma</span>
+              <span className="gradient-text">Nidhi Sharma</span>
             </h1>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" style={{fontFamily: 'Times New Roman'}}>
-              <span className="text-primary-300">&amp; Company</span>
+              <span className="gradient-text">&amp; Company</span>
             </h1>
             
             <div className="flex items-center gap-3 mb-6">
@@ -68,13 +70,13 @@ export default function Hero() {
             </p>
             
             <div className="flex gap-4 flex-wrap">
-              <a href="#about" className="group relative inline-flex items-center gap-2 bg-gradient-to-r from-primary-500 to-primary-400 text-navy-900 px-8 py-3.5 rounded-lg font-semibold shadow-lg hover:shadow-2xl transition-all duration-400 hover:-translate-y-1 overflow-hidden">
+              <a href="/#about" className="group relative inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 via-violet-500 to-purple-600 text-white px-8 py-3.5 rounded-lg font-semibold shadow-lg shadow-purple-900/40 hover:shadow-purple-600/50 hover:shadow-2xl transition-all duration-400 hover:-translate-y-1 overflow-hidden">
                 <span className="relative z-10">About Us</span>
                 <svg className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </a>
-              <a href="#services" className="inline-flex items-center gap-2 border-2 border-primary-400/40 text-primary-200 px-8 py-3.5 rounded-lg font-semibold hover:bg-primary-400/10 hover:border-primary-400/60 transition-all duration-400 hover:-translate-y-1">
+              <Link to="/services" className="inline-flex items-center gap-2 border-2 border-purple-400/50 text-primary-300 px-8 py-3.5 rounded-lg font-semibold hover:bg-purple-500/10 hover:border-purple-400/80 transition-all duration-400 hover:-translate-y-1">
                 Our Services
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -85,15 +87,15 @@ export default function Hero() {
               <div className="grid grid-cols-3 gap-4">
                 <div className="glass rounded-2xl p-5 text-center hover:-translate-y-2 transition-all duration-400 cursor-default">
                   <p className="text-3xl md:text-4xl font-bold text-primary-300 mb-1">{count1}+</p>
-                  <p className="text-xs text-navy-900 font-medium uppercase tracking-wider">Years</p>
+                  <p className="text-xs text-white/50 font-medium uppercase tracking-wider">Years</p>
                 </div>
                 <div className="glass rounded-2xl p-5 text-center hover:-translate-y-2 transition-all duration-400 cursor-default">
                   <p className="text-3xl md:text-4xl font-bold text-primary-300 mb-1">{count2}+</p>
-                  <p className="text-xs text-navy-900 font-medium uppercase tracking-wider">Clients</p>
+                  <p className="text-xs text-white/50 font-medium uppercase tracking-wider">Clients</p>
                 </div>
                 <div className="glass rounded-2xl p-5 text-center hover:-translate-y-2 transition-all duration-400 cursor-default">
                   <p className="text-3xl md:text-4xl font-bold text-primary-300 mb-1">{count3}%</p>
-                  <p className="text-xs text-navy-900 font-medium uppercase tracking-wider">Integrity</p>
+                  <p className="text-xs text-white/50 font-medium uppercase tracking-wider">Integrity</p>
                 </div>
               </div>
 
@@ -111,7 +113,7 @@ export default function Hero() {
               </div>
 
               {/* Trust quote */}
-              <div className="glass rounded-2xl p-5 border-l-4 border-primary-400/50">
+              <div className="glass rounded-2xl p-5 border-l-4 border-primary-400/50 animate-border-glow">
                 <p className="text-primary-100/80 text-sm italic leading-relaxed font-serif-display">
                   "Trusted by businesses, government entities &amp; entrepreneurs across India for financial clarity and compliance excellence."
                 </p>

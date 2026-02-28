@@ -1,112 +1,25 @@
-import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { overviewServices } from '../data/servicesData'
 
-const overviewServices = [
-  { title: 'Cross-Border Advisory', icon: '🌐', description: 'Strategic guidance for international expansion and business setup in India.', color: 'from-navy-700 to-navy-900' },
-  { title: 'Auditing', icon: '🔍', description: 'Internal and statutory audits to ensure transparency and compliance.', color: 'from-neutral-brown to-navy-900' },
-  { title: 'Direct & Indirect Tax', icon: '💼', description: 'Expert support in GST, income tax, and corporate tax matters.', color: 'from-navy-800 to-navy-900' },
-  { title: 'Project & Financial Consultancy', icon: '📊', description: 'Structuring projects, financial planning, and investment advisory.', color: 'from-primary-600 to-primary-800' },
-  { title: 'Due Diligence & Risk Assessment', icon: '🔎', description: 'Identifying risks and enabling informed decision-making.', color: 'from-navy-700 to-navy-900' },
-  { title: 'Accounting & BPO', icon: '📋', description: 'Reliable financial reporting and streamlined outsourcing solutions for efficiency.', color: 'from-primary-500 to-primary-700' },
-  { title: 'Company Law & Registrations', icon: '⚖️', description: 'Assistance with incorporation, compliance, and regulatory filings.', color: 'from-navy-800 to-navy-900' },
-  { title: 'International Taxation & FEMA', icon: '🌍', description: 'Specialized consultancy for cross-border transactions and foreign exchange regulations.', color: 'from-neutral-taupe to-neutral-brown' },
+const ngrbcPrinciples = [
+  { number: 1, title: 'Ethics, Transparency and Accountability' },
+  { number: 2, title: 'Safe and Sustainable Goods and Services' },
+  { number: 3, title: 'Promote Well-Being of All Employees Including Those in the Value Chains' },
+  { number: 4, title: 'Respect for Stakeholders Interests and Responsiveness' },
+  { number: 5, title: 'Human Rights' },
+  { number: 6, title: 'Environment Protection' },
+  { number: 7, title: 'Public Policy' },
+  { number: 8, title: 'Inclusive Growth' },
+  { number: 9, title: 'Consumer Value' },
 ]
-
-const detailedServices = [
-  {
-    id: 'audit',
-    title: 'Audit & Assurance',
-    icon: '🔍',
-    tagline: 'Beyond compliance — strengthening your business foundation.',
-    intro: 'Our Audit and Assurance solutions go beyond fulfilling regulatory requirements. We help clients strengthen internal controls, enhance transparency, and align financial reporting with their business objectives.',
-    color: 'from-navy-800 to-navy-900',
-    offerings: [
-      { name: 'Internal Audit', desc: 'Evaluating processes and controls to improve efficiency and risk management.' },
-      { name: 'Income Tax Audit', desc: 'Ensuring compliance with statutory tax requirements.' },
-      { name: 'GST Audit', desc: 'Comprehensive review of GST records and filings for accuracy and compliance.' },
-      { name: 'Stock Audit', desc: 'Independent verification of inventory to safeguard assets and optimize operations.' },
-      { name: 'Systems Audit', desc: 'Assessing IT systems and controls for reliability and security.' },
-      { name: 'Management Audit', desc: 'Reviewing organizational performance and strategy alignment.' },
-      { name: 'Agreed Upon Procedures', desc: 'Customized procedures tailored to client-specific needs.' },
-      { name: 'Certification Services', desc: 'Issuing certifications required under various laws and regulations.' },
-      { name: 'Special Audits', desc: 'Targeted audits addressing unique business requirements.' },
-      { name: 'Statutory Audit (Indian & International GAAP)', desc: 'Ensuring compliance with accounting standards and regulatory frameworks.' },
-    ],
-  },
-  {
-    id: 'indirect',
-    title: 'Indirect Tax & GST Services',
-    icon: '🧾',
-    tagline: 'Navigating GST complexities with confidence.',
-    intro: 'India\'s GST — designed on the principle of "One Nation, One Tax" — has transformed indirect taxation since July 2017. We provide expert advisory and litigation support to help businesses navigate these complexities.',
-    color: 'from-primary-600 to-primary-800',
-    offerings: [
-      { name: 'Indirect Tax Advisory', desc: 'Transaction planning, opinions on complex matters, drafting replies to departmental notices, and sector-specific GST advisory.' },
-      { name: 'GST Compliance & Reporting', desc: 'Filing GSTR-1, GSTR-3B, GSTR-9 and more; ITC reconciliation; registrations; advisory on CGST, SGST, and IGST transactions.' },
-      { name: 'Indirect Tax Litigation', desc: 'Representation in Service Tax, Excise Duty, and GST disputes; handling matters before tax authorities and CESTAT.' },
-      { name: 'Customs & International Trade', desc: 'Advisory on customs duty, import/export transactions, IGST on imports, and FEMA compliance.' },
-    ],
-  },
-  {
-    id: 'direct',
-    title: 'Direct Tax Advisory',
-    icon: '💼',
-    tagline: 'Optimize your tax strategy. Maximize compliance.',
-    intro: 'Our Direct Tax Advisory services are designed to help businesses and individuals manage tax obligations efficiently while optimizing financial strategies. We provide comprehensive consultancy across corporate, individual, and international taxation matters.',
-    color: 'from-neutral-taupe to-neutral-brown',
-    offerings: [
-      { name: 'Corporate & Individual Taxation', desc: 'Corporate tax planning and compliance, expatriate taxation, M&A tax strategies, LLP/trust taxation, and NRI advisory.' },
-      { name: 'Transfer Pricing', desc: 'Domestic and international transfer pricing studies, reports, and representation before DRP and AAR.' },
-      { name: 'TDS/TCS Advisory', desc: 'TAN registration, monthly computation and deposit, certificate issuance, quarterly return filing, and TDS assessments.' },
-      { name: 'Compliance & Representation', desc: 'ITR/wealth-tax return preparation and filing, tax authority representation, and NRI-specific planning for Indian assets.' },
-      { name: 'Structuring & Planning', desc: 'Investment and organizational structuring for tax efficiency; advisory for trusts and non-profit organizations.' },
-    ],
-  },
-]
-
-function DetailedServiceCard({ service }) {
-  const [open, setOpen] = useState(false)
-  return (
-    <div className={`rounded-2xl overflow-hidden transition-all duration-500 border ${open ? 'border-navy-900/20 shadow-2xl' : 'border-primary-200/60 shadow-lg hover:shadow-xl'}`}>
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full bg-gradient-to-r from-navy-900 to-navy-800 px-8 py-5 flex items-center justify-between gap-4 text-left transition-all duration-300 group"
-      >
-        <div className="flex items-center gap-4">
-          <span className="text-3xl group-hover:scale-110 transition-transform duration-300">{service.icon}</span>
-          <div>
-            <p className="text-lg font-bold text-primary-100">{service.title}</p>
-            <p className="text-xs text-primary-200/60 mt-0.5">{service.tagline}</p>
-          </div>
-        </div>
-        <span className={`text-primary-200/60 text-xl transition-all duration-500 transform ${open ? 'rotate-180' : ''}`}>▾</span>
-      </button>
-      <div className={`overflow-hidden transition-all duration-500 ${open ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}`}>
-        <div className="bg-white/60 backdrop-blur-sm px-8 py-7">
-          <p className="text-navy-900/80 mb-6 leading-relaxed">{service.intro}</p>
-          <p className="font-bold text-navy-900 mb-4 text-sm uppercase tracking-wider">Our Offerings</p>
-          <ul className="space-y-3">
-            {service.offerings.map((o, i) => (
-              <li key={i} className="flex gap-3 group/item">
-                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-navy-900 flex-shrink-0 group-hover/item:scale-150 transition-transform"></span>
-                <div>
-                  <span className="font-semibold text-navy-900">{o.name}</span>
-                  {o.desc && <span className="text-navy-900/60"> — {o.desc}</span>}
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
-  )
-}
 
 export default function Services() {
   return (
     <section id="services" className="section-padding relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary-100 to-primary-200"></div>
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-navy-900/[0.02] rounded-full blur-3xl"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-violet-500/[0.05] rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/[0.04] rounded-full blur-3xl"></div>
 
       <div className="container-custom relative z-10">
         {/* Section Header */}
@@ -126,33 +39,64 @@ export default function Services() {
 
         {/* Overview grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-20">
-          {overviewServices.map((service, idx) => (
-            <div
-              key={idx}
-              className="card-elegant bg-gradient-to-br from-white/80 to-primary-100/60 p-7 group border border-primary-200/50"
-              style={{ animationDelay: `${idx * 0.08}s` }}
-            >
-              <div className="relative z-10">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-navy-900 to-navy-800 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 group-hover:rotate-3 transition-all duration-400 shadow-lg">
-                  {service.icon}
+          {overviewServices.map((service, idx) => {
+            const animationClass = idx < 6 ? `animate-stagger-${idx + 1}` : 'animate-scale-in'
+
+            return (
+              <div
+                key={idx}
+                className={`card-elegant bg-gradient-to-br from-white/80 to-primary-100/60 p-7 group border border-primary-200/50 ${animationClass}`}
+              >
+              {service.link ? (
+                <Link to={service.link} className="block h-full">
+                  <div className="relative z-10">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 group-hover:rotate-3 transition-all duration-400 shadow-lg shadow-purple-900/30">
+                      {service.icon}
+                    </div>
+                    <h3 className="text-base font-bold mb-2 text-navy-900">{service.title}</h3>
+                    <p className="text-sm text-navy-900/60 leading-relaxed">{service.description}</p>
+                    <span className="inline-flex items-center gap-2 text-xs font-semibold text-navy-900 mt-4">
+                      Explore
+                      <span aria-hidden="true">→</span>
+                    </span>
+                  </div>
+                </Link>
+              ) : (
+                <div className="relative z-10">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 group-hover:rotate-3 transition-all duration-400 shadow-lg shadow-purple-900/30">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-base font-bold mb-2 text-navy-900">{service.title}</h3>
+                  <p className="text-sm text-navy-900/60 leading-relaxed">{service.description}</p>
                 </div>
-                <h3 className="text-base font-bold mb-2 text-navy-900">{service.title}</h3>
-                <p className="text-sm text-navy-900/60 leading-relaxed">{service.description}</p>
-              </div>
+              )}
             </div>
-          ))}
+            )
+          })}
         </div>
 
-        {/* Divider */}
-        <div className="divider-elegant mb-12">
-          <span className="text-navy-900/40 text-sm font-semibold tracking-widest uppercase">Deep Dive</span>
-        </div>
-
-        {/* Detailed expandable sections */}
-        <div className="space-y-4 max-w-4xl mx-auto">
-          {detailedServices.map((service) => (
-            <DetailedServiceCard key={service.id} service={service} />
-          ))}
+        {/* NGRBC Principles */}
+        <div className="mt-4">
+          <div className="text-center mb-10">
+            <div className="section-label mx-auto mb-4">
+              <span className="w-2 h-2 bg-navy-900 rounded-full"></span>
+              ESG Framework
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold text-navy-900 mb-2">NGRBC Principles <span className="text-navy-900/50 font-normal text-lg">(9 ESG Principles)</span></h3>
+            <p className="text-navy-900/60 text-base max-w-2xl mx-auto">
+              The nine principles in NGRBC are categorized into the ESG components of Environment, Society and Governance.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+            {ngrbcPrinciples.map((p) => (
+              <div key={p.number} className="flex items-start gap-4 bg-white/70 border border-primary-200/60 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center text-white text-sm font-bold shadow shadow-purple-900/30">
+                  {p.number}
+                </div>
+                <p className="text-sm font-semibold text-navy-900 leading-snug pt-1">Principle {p.number} — {p.title}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
