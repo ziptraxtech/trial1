@@ -37,7 +37,7 @@ export default function WhyChooseUs() {
 
         <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
           {highlights.map((item, idx) => (
-            <div key={idx} className="card-elegant bg-white/60 backdrop-blur-sm p-7 border border-primary-200/40">
+            <div key={idx} className="card-elegant bg-gradient-to-br from-sky-50/80 to-blue-50/70 backdrop-blur-sm p-7 border border-primary-200/40">
               <h3 className="text-lg font-bold text-navy-900 mb-2">{item.title}</h3>
               <p className="text-sm text-navy-900/60 leading-relaxed">{item.desc}</p>
             </div>

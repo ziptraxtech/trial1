@@ -45,9 +45,11 @@ export default function Hero() {
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <div className="animate-fade-in-up">
-            <div className="section-label-light mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary-300/40 bg-navy-900/40 backdrop-blur-sm mb-6 shadow-sm">
               <span className="w-2 h-2 bg-primary-400 rounded-full"></span>
-              Since 2012 · Delhi &amp; Gurugram
+              <span className="text-xs font-semibold tracking-[0.25em] text-primary-100/80 uppercase">
+                Since 2012 · Delhi &amp; Gurugram
+              </span>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2 leading-tight">

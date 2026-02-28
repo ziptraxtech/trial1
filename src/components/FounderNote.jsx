@@ -18,7 +18,7 @@ export default function FounderNote() {
           <div className="line-decoration mt-4"></div>
         </div>
 
-        <div className="animate-fade-in-up card-elegant bg-white/50 backdrop-blur-sm overflow-hidden border border-primary-200/40">
+        <div className="animate-fade-in-up card-elegant bg-gradient-to-br from-sky-50/70 to-blue-50/60 backdrop-blur-sm overflow-hidden border border-primary-200/40">
           {/* Navy accent bar */}
           <div className="bg-gradient-to-r from-blue-700 via-violet-700 to-purple-700 px-8 py-4 flex items-center gap-3">
             <span className="text-primary-200/40 text-4xl leading-none font-serif-display">❝</span>

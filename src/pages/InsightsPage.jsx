@@ -22,7 +22,7 @@ export default function InsightsPage() {
           </div>
 
           <div className="max-w-5xl mx-auto space-y-10">
-            <div className="card-elegant bg-white/60 backdrop-blur-sm p-8 md:p-10 border border-primary-200/40">
+            <div className="card-elegant bg-gradient-to-br from-sky-50/80 to-blue-50/70 backdrop-blur-sm p-8 md:p-10 border border-primary-200/40">
               <h2 className="text-2xl font-bold text-navy-900 mb-4">Types of Business Entities in India</h2>
               <ul className="space-y-3 text-navy-900/70">
                 <li>Private Limited or Public Limited Company under the Companies Act, 2013.</li>
@@ -35,7 +35,7 @@ export default function InsightsPage() {
               </ul>
             </div>
 
-            <div className="card-elegant bg-white/60 backdrop-blur-sm p-8 md:p-10 border border-primary-200/40">
+            <div className="card-elegant bg-gradient-to-br from-sky-50/80 to-blue-50/70 backdrop-blur-sm p-8 md:p-10 border border-primary-200/40">
               <h2 className="text-2xl font-bold text-navy-900 mb-4">Key Requirements and Considerations</h2>
               <ul className="space-y-3 text-navy-900/70">
                 <li>Resident Director: Every company must have at least one director who has stayed in India for 182 days or more in a financial year. A foreign national can serve in this role.</li>
@@ -44,7 +44,7 @@ export default function InsightsPage() {
               </ul>
             </div>
 
-            <div className="card-elegant bg-white/60 backdrop-blur-sm p-8 md:p-10 border border-primary-200/40">
+            <div className="card-elegant bg-gradient-to-br from-sky-50/80 to-blue-50/70 backdrop-blur-sm p-8 md:p-10 border border-primary-200/40">
               <h2 className="text-2xl font-bold text-navy-900 mb-4">Liaison Office and Branch Office Overview</h2>
               <div className="space-y-6 text-navy-900/70">
                 <div>
@@ -62,7 +62,7 @@ export default function InsightsPage() {
               </div>
             </div>
 
-            <div className="card-elegant bg-white/60 backdrop-blur-sm p-8 md:p-10 border border-primary-200/40">
+            <div className="card-elegant bg-gradient-to-br from-sky-50/80 to-blue-50/70 backdrop-blur-sm p-8 md:p-10 border border-primary-200/40">
               <h2 className="text-2xl font-bold text-navy-900 mb-4">Eligibility, Timelines, and Validity</h2>
               <ul className="space-y-3 text-navy-900/70">
                 <li>Net worth is calculated as paid-up capital plus free reserves minus intangible assets, based on the latest audited statements.</li>

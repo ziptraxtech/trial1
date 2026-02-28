@@ -21,7 +21,7 @@ export default function CareerPage() {
             <div className="line-decoration mt-6"></div>
           </div>
 
-          <div className="card-elegant bg-white/60 backdrop-blur-sm p-8 md:p-10 border border-primary-200/40 space-y-6">
+          <div className="card-elegant bg-gradient-to-br from-sky-50/80 to-blue-50/70 backdrop-blur-sm p-8 md:p-10 border border-primary-200/40 space-y-6">
             <p className="text-navy-900/70 leading-relaxed">
               We are always looking for talented professionals in audit, taxation, compliance, accounting, and advisory services. If you are passionate about creating impact for clients and want to grow with a forward-looking firm, we would love to hear from you.
             </p>

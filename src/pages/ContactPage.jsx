@@ -21,7 +21,7 @@ export default function ContactPage() {
             <div className="line-decoration mt-6"></div>
           </div>
 
-          <div className="card-elegant bg-white/60 backdrop-blur-sm p-8 md:p-10 border border-primary-200/40 space-y-6">
+          <div className="card-elegant bg-gradient-to-br from-sky-50/80 to-blue-50/70 backdrop-blur-sm p-8 md:p-10 border border-primary-200/40 space-y-6">
             <div>
               <p className="font-semibold text-navy-900 mb-1">Registered Office</p>
               <p className="text-navy-900/60">284, 4th Floor, Sector-27</p>

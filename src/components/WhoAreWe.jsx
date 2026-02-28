@@ -65,7 +65,7 @@ export default function WhoAreWe() {
               </div>
             </div>
 
-            <div className="animate-slide-in-right card-elegant bg-white/60 backdrop-blur-sm p-8 md:p-10 border border-primary-200/40">
+            <div className="animate-slide-in-right card-elegant bg-gradient-to-br from-sky-50/80 to-blue-50/70 backdrop-blur-sm p-8 md:p-10 border border-primary-200/40">
               <div className="relative z-10">
                 <div className="section-label mb-5">
                   <span className="w-2 h-2 bg-navy-900 rounded-full"></span>
@@ -93,7 +93,7 @@ export default function WhoAreWe() {
           </div>
 
           {/* About Founder */}
-          <div className="animate-fade-in-up card-elegant bg-white/50 backdrop-blur-sm p-8 md:p-12 border border-primary-200/40">
+          <div className="animate-fade-in-up card-elegant bg-gradient-to-br from-sky-50/70 to-blue-50/60 backdrop-blur-sm p-8 md:p-12 border border-primary-200/40">
             <div className="relative z-10">
               <div className="text-center mb-8">
                 <div className="section-label mx-auto mb-3">

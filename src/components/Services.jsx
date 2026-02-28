@@ -89,7 +89,7 @@ export default function Services() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
             {ngrbcPrinciples.map((p) => (
-              <div key={p.number} className="flex items-start gap-4 bg-white/70 border border-primary-200/60 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div key={p.number} className="flex items-start gap-4 bg-gradient-to-br from-sky-50/90 to-blue-50/80 border border-primary-200/60 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow duration-300">
                 <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center text-white text-sm font-bold shadow shadow-purple-900/30">
                   {p.number}
                 </div>

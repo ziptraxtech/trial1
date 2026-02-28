@@ -51,7 +51,7 @@ export default function Goals() {
         </div>
 
         {/* Commitment box */}
-        <div className="mt-14 max-w-4xl mx-auto card-elegant bg-white/50 backdrop-blur-sm p-8 md:p-10 border border-primary-200/40 animate-fade-in-up">
+        <div className="mt-14 max-w-4xl mx-auto card-elegant bg-gradient-to-br from-sky-50/70 to-blue-50/60 backdrop-blur-sm p-8 md:p-10 border border-primary-200/40 animate-fade-in-up">
           <div className="relative z-10 text-center">
             <h3 className="text-xl font-bold text-navy-900 mb-4">Our Commitment to Sustainability</h3>
             <p className="text-navy-900/60 leading-relaxed">
