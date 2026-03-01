@@ -88,16 +88,16 @@ export default function Hero() {
               {/* Top Stats Row */}
               <div className="grid grid-cols-3 gap-4">
                 <div className="glass rounded-2xl p-5 text-center hover:-translate-y-2 transition-all duration-400 cursor-default">
-                  <p className="text-3xl md:text-4xl font-bold text-primary-300 mb-1">{count1}+</p>
-                  <p className="text-xs text-white/50 font-medium uppercase tracking-wider">Years</p>
+                  <p className="text-3xl md:text-4xl font-bold text-black mb-1">{count1}+</p>
+                  <p className="text-xs text-black/60 font-medium uppercase tracking-wider">Years</p>
                 </div>
                 <div className="glass rounded-2xl p-5 text-center hover:-translate-y-2 transition-all duration-400 cursor-default">
-                  <p className="text-3xl md:text-4xl font-bold text-primary-300 mb-1">{count2}+</p>
-                  <p className="text-xs text-white/50 font-medium uppercase tracking-wider">Clients</p>
+                  <p className="text-3xl md:text-4xl font-bold text-black mb-1">{count2}+</p>
+                  <p className="text-xs text-black/60 font-medium uppercase tracking-wider">Clients</p>
                 </div>
                 <div className="glass rounded-2xl p-5 text-center hover:-translate-y-2 transition-all duration-400 cursor-default">
-                  <p className="text-3xl md:text-4xl font-bold text-primary-300 mb-1">{count3}%</p>
-                  <p className="text-xs text-white/50 font-medium uppercase tracking-wider">Integrity</p>
+                  <p className="text-3xl md:text-4xl font-bold text-black mb-1">{count3}%</p>
+                  <p className="text-xs text-black/60 font-medium uppercase tracking-wider">Integrity</p>
                 </div>
               </div>
 

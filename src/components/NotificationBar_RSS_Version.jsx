@@ -24,71 +24,41 @@ export default function NotificationBar() {
 
   const fetchNews = async () => {
     try {
-      // Using NewsAPI - Get your free API key at https://newsapi.org/register
-      // Replace 'YOUR_NEWSAPI_KEY_HERE' with your actual API key
-      const API_KEY = import.meta.env.VITE_NEWS_API_KEY || 'YOUR_NEWSAPI_KEY_HERE'
+      // Using RSS2JSON service to fetch and parse RSS feeds from official sources
+      // This is completely free and doesn't require an API key
       
-      if (API_KEY === 'YOUR_NEWSAPI_KEY_HERE') {
-        console.warn('NewsAPI key not configured. Using fallback updates.')
-        setNews(fallbackUpdates)
-        setLoading(false)
-        return
-      }
-      
-      // Specific search queries related to CA services
-      const queries = [
-        'GST India compliance',
-        'income tax India returns',
-        'CBDT notification',
-        'tax audit India',
-        'corporate law India companies act',
-        'FEMA RBI guidelines',
-        'BRSR ESG reporting India',
-        'TDS TCS India',
-        'GST council decisions',
-        'statutory audit India',
-        'transfer pricing India',
-        'company incorporation India ROC'
+      const rssFeeds = [
+        'https://pib.gov.in/rssfeed/gst.xml',
+        'https://pib.gov.in/rssfeed/finance.xml'
       ]
       
-      const randomQuery = queries[Math.floor(Math.random() * queries.length)]
+      const randomFeed = rssFeeds[Math.floor(Math.random() * rssFeeds.length)]
       
+      // Using rss2json.com free service to convert RSS to JSON
       const response = await fetch(
-        `https://newsapi.org/v2/everything?q=${encodeURIComponent(randomQuery)}&language=en&sortBy=publishedAt&pageSize=15&apiKey=${API_KEY}`
+        `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(randomFeed)}&count=8`
       )
       
       if (response.ok) {
         const data = await response.json()
-        if (data.articles && data.articles.length > 0) {
-          const formattedNews = data.articles
-            .filter(article => {
-              if (!article.title || !article.url) return false
-              
-              // Filter for CA/Tax/Finance related content only
-              const title = article.title.toLowerCase()
-              const description = (article.description || '').toLowerCase()
-              const content = title + ' ' + description
-              
-              const relevantKeywords = [
-                'gst', 'tax', 'income tax', 'tds', 'tcs', 'cbdt', 
-                'audit', 'compliance', 'finance', 'accounting',
-                'corporate law', 'companies act', 'roc', 'mca',
-                'fema', 'rbi', 'transfer pricing', 'itr',
-                'brsr', 'esg', 'sustainability reporting',
-                'chartered accountant', 'icai', 'cfo',
-                'merger', 'acquisition', 'due diligence',
-                'customs', 'excise', 'service tax', 'vat',
-                'financial reporting', 'secretary', 'nclt'
-              ]
-              
-              return relevantKeywords.some(keyword => content.includes(keyword))
+        if (data.items && data.items.length > 0) {
+          const formattedNews = data.items
+            .filter(item => {
+              // Filter for tax/GST related news
+              const title = item.title.toLowerCase()
+              return title.includes('tax') || 
+                     title.includes('gst') || 
+                     title.includes('income') || 
+                     title.includes('cbdt') ||
+                     title.includes('compliance') ||
+                     title.includes('revenue')
             })
             .slice(0, 8)
-            .map(article => ({
-              text: `📰 ${article.title}`,
-              url: article.url,
-              source: article.source.name,
-              publishedAt: new Date(article.publishedAt).toLocaleDateString()
+            .map(item => ({
+              text: `📰 ${item.title}`,
+              url: item.link,
+              source: 'PIB India',
+              publishedAt: new Date(item.pubDate).toLocaleDateString()
             }))
           
           if (formattedNews.length > 0) {
@@ -100,7 +70,6 @@ export default function NotificationBar() {
           setNews(fallbackUpdates)
         }
       } else {
-        console.error('NewsAPI error:', response.status)
         setNews(fallbackUpdates)
       }
     } catch (error) {
@@ -130,7 +99,7 @@ export default function NotificationBar() {
             </button>
           </div>
           {/* Updates list */}
-          <ul className="divide-y divide-white/10 max-h-72 overflow-y-auto scrollbar-thin">
+          <ul className="divide-y divide-white/10 max-h-72 overflow-y-auto">
             {loading ? (
               <li className="px-4 py-3 text-sm font-medium text-center">
                 Loading latest updates...
@@ -138,7 +107,7 @@ export default function NotificationBar() {
             ) : (
               updates.map((update, idx) => {
                 const displayText = typeof update === 'string' ? update : update.text
-                const url = typeof update === 'object' && update.url ? update.url : null
+                const url = typeof update === 'object' ? update.url : null
 
                 return (
                   <li key={idx} className="group">
@@ -147,12 +116,10 @@ export default function NotificationBar() {
                         href={url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block px-4 py-3 text-sm font-medium hover:bg-white/20 active:bg-white/30 transition-all cursor-pointer no-underline text-white"
+                        className="flex items-start justify-between gap-3 px-4 py-3 text-sm font-medium hover:bg-white/10 transition-colors cursor-pointer"
                       >
-                        <div className="flex items-start justify-between gap-3">
-                          <span className="flex-1 leading-snug">{displayText}</span>
-                          <ExternalLink size={14} className="flex-shrink-0 mt-0.5 opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all" />
-                        </div>
+                        <span className="flex-1">{displayText}</span>
+                        <ExternalLink size={14} className="flex-shrink-0 mt-0.5 opacity-60 group-hover:opacity-100 transition-opacity" />
                       </a>
                     ) : (
                       <div className="px-4 py-3 text-sm font-medium">
