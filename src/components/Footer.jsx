@@ -16,10 +16,10 @@ export default function Footer() {
           {/* Company Info */}
           <div className="animate-fade-in-up">
             <div className="flex items-center gap-3 mb-5">
-              <img src="/logo.png" alt="CA India" className="w-16 h-12 object-contain bg-white/10 backdrop-blur-sm rounded-xl p-1.5" />
+              <img src="/logo.png" alt="CA India" className="w-16 h-12 object-contain" />
               <div>
-                <h2 className="text-xl font-bold text-primary-200">Nidhi Sharma</h2>
-                <p className="text-primary-200/50 text-xs font-semibold uppercase tracking-widest">&amp; Company</p>
+                <h2 className="font-bold text-primary-100 text-base leading-tight">Nidhi Sharma & Company</h2>
+                <p className="text-[10px] text-primary-400 font-semibold uppercase tracking-widest">Chartered Accountants</p>
               </div>
             </div>
             <p className="text-primary-200/50 text-sm leading-relaxed">
@@ -66,11 +66,11 @@ export default function Footer() {
               </div>
               <div>
                 <p className="font-semibold text-primary-100/80 text-sm mb-1">📧 Email</p>
-                <a href="mailto:nidhi@nsc.ind.in" className="text-primary-200/50 text-sm hover:text-primary-200 transition-colors">nidhi@nsc.ind.in</a>
+                <a href="mailto:info@nsc.ind.in" className="text-primary-200/50 text-sm hover:text-primary-200 transition-colors">info@nsc.ind.in</a>
               </div>
               <div>
                 <p className="font-semibold text-primary-100/80 text-sm mb-1">📞 Phone</p>
-                <a href="tel:+919999130871" className="text-primary-200/50 text-sm hover:text-primary-200 transition-colors">+91-9999130871</a>
+                <a href="tel:+918586981072" className="text-primary-200/50 text-sm hover:text-primary-200 transition-colors">+91-8586981072</a>
               </div>
             </div>
           </div>

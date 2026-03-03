@@ -23,17 +23,17 @@ export default function CallToAction() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a 
-              href="mailto:nidhi@nsc.ind.in" 
+              href="mailto:info@nsc.ind.in" 
               className="group inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 via-violet-500 to-purple-600 gradient-animate text-white px-8 py-3.5 rounded-lg font-semibold shadow-lg shadow-purple-900/40 hover:shadow-purple-600/50 hover:shadow-2xl transition-all duration-400 hover:-translate-y-1"
             >
               Schedule a Consultation
               <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>
             <a 
-              href="tel:+919999130871" 
+              href="tel:+918586981072" 
               className="inline-flex items-center gap-2 border-2 border-purple-400/40 text-primary-300 px-8 py-3.5 rounded-lg font-semibold hover:bg-purple-500/10 hover:border-purple-400/60 transition-all duration-400 hover:-translate-y-1"
             >
-              📞 +91-9999130871
+              📞 +91-8586981072
             </a>
           </div>
         </div>

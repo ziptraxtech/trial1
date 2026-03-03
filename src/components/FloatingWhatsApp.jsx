@@ -1,5 +1,5 @@
 export default function FloatingWhatsApp() {
-  const phoneNumber = '919999130871' // WhatsApp number from footer
+  const phoneNumber = '918586981072' // WhatsApp number from footer
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=Hello%20Nidhi%20Sharma%20%26%20Company%2C%20I%20would%20like%20to%20discuss%20our%20requirements.`
 
   return (

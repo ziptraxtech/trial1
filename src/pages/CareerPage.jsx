@@ -27,7 +27,7 @@ export default function CareerPage() {
             </p>
             <div className="flex flex-col md:flex-row gap-4 items-start md:items-center">
               <a
-                href="mailto:nidhi@nsc.ind.in"
+                href="mailto:info@nsc.ind.in"
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold shadow-lg shadow-purple-900/30 hover:shadow-purple-600/40 hover:shadow-2xl transition-all duration-400 hover:-translate-y-1"
               >
                 Apply via Email

@@ -29,14 +29,14 @@ export default function ContactPage() {
             </div>
             <div>
               <p className="font-semibold text-navy-900 mb-1">Email</p>
-              <a href="mailto:nidhi@nsc.ind.in" className="text-navy-900/60 hover:text-navy-900 transition-colors">
-                nidhi@nsc.ind.in
+              <a href="mailto:info@nsc.ind.in" className="text-navy-900/60 hover:text-navy-900 transition-colors">
+                info@nsc.ind.in
               </a>
             </div>
             <div>
               <p className="font-semibold text-navy-900 mb-1">Phone</p>
-              <a href="tel:+919999130871" className="text-navy-900/60 hover:text-navy-900 transition-colors">
-                +91-9999130871
+              <a href="tel:+918586981072" className="text-navy-900/60 hover:text-navy-900 transition-colors">
+                +91-8586981072
               </a>
             </div>
           </div>
