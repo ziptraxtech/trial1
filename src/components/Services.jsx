@@ -50,10 +50,7 @@ export default function Services() {
               {service.link ? (
                 <Link to={service.link} className="block h-full">
                   <div className="relative z-10">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 group-hover:rotate-3 transition-all duration-400 shadow-lg shadow-purple-900/30">
-                      {service.icon}
-                    </div>
-                    <h3 className="text-base font-bold mb-2 text-navy-900">{service.title}</h3>
+                    <h3 className="text-2xl font-bold mb-3 text-navy-900">{service.title}</h3>
                     <p className="text-sm text-navy-900/60 leading-relaxed">{service.description}</p>
                     <span className="inline-flex items-center gap-2 text-xs font-semibold text-navy-900 mt-4">
                       Explore
@@ -63,10 +60,7 @@ export default function Services() {
                 </Link>
               ) : (
                 <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 group-hover:rotate-3 transition-all duration-400 shadow-lg shadow-purple-900/30">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-base font-bold mb-2 text-navy-900">{service.title}</h3>
+                  <h3 className="text-2xl font-bold mb-3 text-navy-900">{service.title}</h3>
                   <p className="text-sm text-navy-900/60 leading-relaxed">{service.description}</p>
                 </div>
               )}

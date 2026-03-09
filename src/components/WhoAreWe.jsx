@@ -24,7 +24,7 @@ export default function WhoAreWe() {
           <div className="animate-fade-in-up card-elegant bg-gradient-to-br from-sky-50/80 to-blue-200/70 backdrop-blur-sm p-8 md:p-12 border border-primary-200/40">
             <div className="relative z-10 space-y-5 text-lg text-navy-900/80 leading-relaxed">
               <p>
-                <span className="font-serif-display text-2xl text-navy-900 font-semibold">Nidhi Sharma & Company</span> is a distinguished Chartered Accountancy firm with offices in Delhi and Gurugram. Since 2012, we have been a trusted partner to businesses, government entities, and entrepreneurs, delivering solutions that combine technical expertise with practical insight.
+                <span className="text-2xl text-navy-900 font-semibold">Nidhi Sharma & Company</span> is a distinguished Chartered Accountancy firm with offices in Delhi and Gurugram. Since 2012, we have been a trusted partner to businesses, government entities, and entrepreneurs, delivering solutions that combine technical expertise with practical insight.
               </p>
               <p>
                 We specialize in a wide spectrum of professional services — from Accounting & Auditing and Taxation (Direct & Indirect, including GST) to Project & Financial Consultancy, Business Process Outsourcing, Corporate Law & Registrations, International Taxation & FEMA Advisory, and Mergers & Acquisitions.
@@ -33,7 +33,7 @@ export default function WhoAreWe() {
                 Our philosophy is simple yet powerful: <strong className="text-navy-900">integrity, commitment, and excellence.</strong> We believe in building long-term relationships by delivering value-driven services that empower our clients to thrive in a dynamic business environment.
               </p>
               <p>
-                With a forward-looking approach, we continuously adapt to evolving industry requirements. At Nidhi Sharma & Company, we don't just provide services — <em className="font-serif-display text-navy-900">we craft solutions that create impact.</em>
+                With a forward-looking approach, we continuously adapt to evolving industry requirements. At Nidhi Sharma & Company, we don't just provide services — <em className="text-navy-900">we craft solutions that create impact.</em>
               </p>
             </div>
           </div>
@@ -101,7 +101,7 @@ export default function WhoAreWe() {
                   Leadership
                 </div>
                 <h3 className="text-3xl font-bold text-navy-900 mb-1">About the Founder</h3>
-                <p className="text-navy-900 font-semibold text-xl font-serif-display">CA Nidhi Sharma, FCA</p>
+                <p className="text-navy-900 font-semibold text-xl">CA Nidhi Sharma, FCA</p>
                 <p className="text-navy-900/40 text-sm font-medium mt-1">B.Com (H) · FCA · DISA · GST · BRSR</p>
               </div>
               <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 items-start">
@@ -124,7 +124,7 @@ export default function WhoAreWe() {
                   <p>
                     She has collaborated with professionally managed corporates in a consulting capacity and has successfully guided organizations in setting up and operating businesses in India.
                   </p>
-                  <p className="text-navy-900 font-medium italic font-serif-display">
+                  <p className="text-navy-900 font-medium italic">
                     "Nidhi's vision is rooted in integrity, innovation, and client success — values that continue to shape the firm's journey and reputation."
                   </p>
                 </div>
