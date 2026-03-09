@@ -1,4 +1,9 @@
+import { useScrollAnimation } from '../hooks/useScrollAnimation'
+
 export default function Mission() {
+  const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.2 })
+  const [contentRef, contentVisible] = useScrollAnimation({ threshold: 0.2 })
+
   return (
     <section className="section-padding relative overflow-hidden">
       {/* Navy background with texture */}
@@ -9,7 +14,7 @@ export default function Mission() {
       <div className="absolute top-1/2 left-1/2 w-56 h-56 bg-violet-500/8 rounded-full blur-2xl -translate-x-1/2"></div>
 
       <div className="container-custom relative z-10">
-        <div className="text-center mb-14 animate-fade-in-up">
+        <div ref={headerRef} className={`text-center mb-14 transition-all duration-700 ${headerVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-12'}`}>
           <div className="section-label-light mx-auto mb-4">
             <span className="w-2 h-2 bg-primary-400 rounded-full"></span>
             Our Purpose
@@ -19,9 +24,9 @@ export default function Mission() {
           <div className="line-decoration-light mt-6"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div ref={contentRef} className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {/* Vision */}
-          <div className="glass rounded-2xl p-10 hover:-translate-y-2 transition-all duration-500 animate-slide-in-left">
+          <div className={`glass rounded-2xl p-10 hover:-translate-y-2 transition-all duration-700 ${contentVisible ? 'animate-slide-in-left' : 'opacity-0 -translate-x-20'}`}>
             <div className="text-4xl mb-5">🔭</div>
             <h3 className="text-xl font-bold text-primary-200 mb-4">Our Vision</h3>
             <p className="text-primary-100/80 leading-relaxed mb-3">
@@ -33,7 +38,7 @@ export default function Mission() {
           </div>
 
           {/* Mission */}
-          <div className="glass rounded-2xl p-10 hover:-translate-y-2 transition-all duration-500 animate-slide-in-right">
+          <div className={`glass rounded-2xl p-10 hover:-translate-y-2 transition-all duration-700 ${contentVisible ? 'animate-slide-in-right' : 'opacity-0 translate-x-20'}`}>
             <div className="text-4xl mb-5">🎯</div>
             <h3 className="text-xl font-bold text-primary-200 mb-4">Our Mission</h3>
             <p className="text-primary-100/80 leading-relaxed">

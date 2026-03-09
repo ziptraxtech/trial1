@@ -1,4 +1,13 @@
+import { useScrollAnimation } from '../hooks/useScrollAnimation'
+
 export default function WhoAreWe() {
+  const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.2 })
+  const [aboutRef, aboutVisible] = useScrollAnimation({ threshold: 0.2 })
+  const [approachRef, approachVisible] = useScrollAnimation({ threshold: 0.2 })
+  const [ctaRef, ctaVisible] = useScrollAnimation({ threshold: 0.2 })
+  const [founderRef, founderVisible] = useScrollAnimation({ threshold: 0.3 })
+  const [facilitiesRef, facilitiesVisible] = useScrollAnimation({ threshold: 0.2 })
+
   return (
     <section id="about" className="section-padding relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-primary-100 to-primary-200"></div>
@@ -7,7 +16,7 @@ export default function WhoAreWe() {
 
       <div className="container-custom relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
+        <div ref={headerRef} className={`text-center mb-16 transition-all duration-700 ${headerVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
           <div className="section-label mx-auto mb-4">
             <span className="w-2 h-2 bg-navy-900 rounded-full"></span>
             Who We Are
@@ -21,7 +30,7 @@ export default function WhoAreWe() {
 
         <div className="max-w-6xl mx-auto space-y-12">
           {/* Main About */}
-          <div className="animate-fade-in-up card-elegant bg-gradient-to-br from-sky-50/80 to-blue-200/70 backdrop-blur-sm p-8 md:p-12 border border-primary-200/40">
+          <div ref={aboutRef} className={`card-elegant bg-gradient-to-br from-sky-50/80 to-blue-200/70 backdrop-blur-sm p-8 md:p-12 border border-primary-200/40 transition-all duration-700 ${aboutVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'}`}>
             <div className="relative z-10 space-y-5 text-lg text-navy-900/80 leading-relaxed">
               <p>
                 <span className="text-2xl text-navy-900 font-semibold">Nidhi Sharma & Company</span> is a distinguished Chartered Accountancy firm with offices in Delhi and Gurugram. Since 2012, we have been a trusted partner to businesses, government entities, and entrepreneurs, delivering solutions that combine technical expertise with practical insight.
@@ -39,8 +48,8 @@ export default function WhoAreWe() {
           </div>
 
           {/* Approach & Values */}
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="animate-slide-in-left card-elegant bg-gradient-to-br from-navy-800 via-navy-700 to-navy-800 p-8 md:p-10 border border-blue-400/30">
+          <div ref={approachRef} className="grid md:grid-cols-2 gap-6">
+            <div className={`card-elegant bg-gradient-to-br from-navy-800 via-navy-700 to-navy-800 p-8 md:p-10 border border-blue-400/30 transition-all duration-700 ${approachVisible ? 'animate-slide-in-left' : 'opacity-0 -translate-x-8'}`}>
               <div className="relative z-10">
                 <div className="section-label-light mb-5">
                   <span className="w-2 h-2 bg-primary-50 rounded-full"></span>
@@ -65,7 +74,7 @@ export default function WhoAreWe() {
               </div>
             </div>
 
-            <div className="animate-slide-in-right card-elegant bg-gradient-to-br from-sky-50/80 to-blue-200/70 backdrop-blur-sm p-8 md:p-10 border border-primary-200/40">
+            <div className={`card-elegant bg-gradient-to-br from-sky-50/80 to-blue-200/70 backdrop-blur-sm p-8 md:p-10 border border-primary-200/40 transition-all duration-700 ${approachVisible ? 'animate-slide-in-right' : 'opacity-0 translate-x-8'}`}>
               <div className="relative z-10">
                 <div className="section-label mb-5">
                   <span className="w-2 h-2 bg-navy-900 rounded-full"></span>
@@ -93,7 +102,7 @@ export default function WhoAreWe() {
           </div>
 
           {/* About Founder */}
-          <div className="animate-fade-in-up card-elegant bg-gradient-to-br from-sky-50/80 to-blue-200/70 backdrop-blur-sm p-8 md:p-12 border border-primary-200/40">
+          <div ref={founderRef} className={`card-elegant bg-gradient-to-br from-sky-50/80 to-blue-200/70 backdrop-blur-sm p-8 md:p-12 border border-primary-200/40 transition-all duration-700 ${founderVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'}`}>
             <div className="relative z-10">
               <div className="text-center mb-8">
                 <div className="section-label mx-auto mb-3">
@@ -106,7 +115,7 @@ export default function WhoAreWe() {
               </div>
               <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 items-start">
                 <div className="flex justify-center md:col-span-1">
-                  <div className="rounded-2xl overflow-hidden shadow-2xl ring-4 ring-primary-200/50">
+                  <div className="rounded-2xl overflow-hidden shadow-2xl ring-4 ring-primary-200/50 hover-scale">
                     <img 
                       src="/image.png" 
                       alt="CA Nidhi Sharma" 
@@ -133,8 +142,8 @@ export default function WhoAreWe() {
           </div>
 
           {/* Office Facilities Gallery */}
-          <div className="animate-fade-in-up">
-            <div className="text-center mb-10">
+          <div ref={facilitiesRef} className={`transition-all duration-700 ${facilitiesVisible ? 'opacity-100' : 'opacity-0'}`}>
+            <div className={`text-center mb-10 transition-all duration-700 ${facilitiesVisible ? 'animate-fade-in-up' : 'translate-y-8'}`}>
               <div className="section-label mx-auto mb-3">
                 <span className="w-2 h-2 bg-navy-900 rounded-full"></span>
                 Our Spaces
@@ -149,14 +158,18 @@ export default function WhoAreWe() {
                 { src: '/hall.jpg', label: 'Meeting Hall' },
                 { src: '/Meeting%20room.jpg', label: 'Meeting Room' },
               ].map((img, i) => (
-                <div key={i} className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
+                <div 
+                  key={i} 
+                  className={`group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-700 ${facilitiesVisible ? `animate-stagger-${(i % 6) + 1}` : 'opacity-0 translate-y-8'}`}
+                  style={facilitiesVisible ? {} : { opacity: 0, transform: 'translateY(30px)' }}
+                >
                   <img 
                     src={img.src} 
                     alt={img.label} 
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-64 object-cover group-hover:scale-125 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-end p-6">
-                    <p className="text-white font-semibold">{img.label}</p>
+                    <p className="text-white font-semibold text-lg">{img.label}</p>
                   </div>
                 </div>
               ))}

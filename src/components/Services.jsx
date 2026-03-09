@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import { overviewServices } from '../data/servicesData'
 
 const ngrbcPrinciples = [
@@ -14,6 +15,8 @@ const ngrbcPrinciples = [
 ]
 
 export default function Services() {
+  const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.2 })
+  const [gridRef, gridVisible] = useScrollAnimation({ threshold: 0.1 })
   return (
     <section id="services" className="section-padding relative overflow-hidden">
       {/* Background */}
@@ -23,7 +26,7 @@ export default function Services() {
 
       <div className="container-custom relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
+        <div ref={headerRef} className={`text-center mb-16 transition-all duration-700 ${headerVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
           <div className="section-label mx-auto mb-4">
             <span className="w-2 h-2 bg-navy-900 rounded-full"></span>
             What We Do
@@ -38,23 +41,23 @@ export default function Services() {
         </div>
 
         {/* Overview grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-20">
+        <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-20">
           {overviewServices.map((service, idx) => {
-            const animationClass = idx < 6 ? `animate-stagger-${idx + 1}` : 'animate-scale-in'
+            const animationClass = gridVisible ? (idx < 6 ? `animate-stagger-${idx + 1}` : 'animate-scale-in') : ''
 
             return (
               <div
                 key={idx}
-                className={`card-elegant bg-gradient-to-br from-sky-50/80 to-blue-200/70 p-7 group border border-primary-200/50 ${animationClass}`}
+                className={`card-elegant bg-gradient-to-br from-sky-50/80 to-blue-200/70 p-7 group border border-primary-200/50 hover-scale hover-glow transition-all duration-700 ${animationClass} ${!gridVisible ? 'opacity-0 translate-y-8' : 'opacity-100'}`}
               >
               {service.link ? (
                 <Link to={service.link} className="block h-full">
                   <div className="relative z-10">
-                    <h3 className="text-2xl font-bold mb-3 text-navy-900">{service.title}</h3>
+                    <h3 className="text-2xl font-bold mb-3 text-navy-900 group-hover:text-blue-600 transition-colors">{service.title}</h3>
                     <p className="text-sm text-navy-900/60 leading-relaxed">{service.description}</p>
-                    <span className="inline-flex items-center gap-2 text-xs font-semibold text-navy-900 mt-4">
+                    <span className="inline-flex items-center gap-2 text-xs font-semibold text-navy-900 mt-4 group-hover:text-blue-600 transition-colors">
                       Explore
-                      <span aria-hidden="true">→</span>
+                      <span aria-hidden="true" className="group-hover:translate-x-1 transition-transform">→</span>
                     </span>
                   </div>
                 </Link>

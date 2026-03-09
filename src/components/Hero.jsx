@@ -1,10 +1,20 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useTypewriter } from '../hooks/useTypewriter'
 
 export default function Hero() {
   const [count1, setCount1] = useState(0)
   const [count2, setCount2] = useState(0)
   const [count3, setCount3] = useState(0)
+
+  const typewriterTexts = [
+    'Expert Financial Advisory',
+    'Comprehensive Tax Solutions',
+    'Audit & Assurance Services',
+    'Corporate Compliance Support',
+    'Business Growth Strategy'
+  ]
+  const typewriterText = useTypewriter(typewriterTexts, 50, 30, 2500)
 
   useEffect(() => {
     const animate = (target, setter, duration) => {
@@ -62,6 +72,13 @@ export default function Hero() {
             <div className="flex items-center gap-3 mb-6">
               <div className="line-decoration-light"></div>
               <p className="text-primary-100 text-lg font-medium tracking-wide">Chartered Accountants</p>
+            </div>
+
+            <div className="mb-8 min-h-[50px]">
+              <p className="text-primary-300 text-xl md:text-2xl font-semibold tracking-wide">
+                {typewriterText}
+                <span className="animate-pulse">|</span>
+              </p>
             </div>
             
             <p className="text-primary-200/80 text-lg mb-3 leading-relaxed max-w-lg">
